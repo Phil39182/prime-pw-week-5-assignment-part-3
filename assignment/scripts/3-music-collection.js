@@ -31,13 +31,15 @@ function showCollection( collection ) {
     }
 }//end showCollection
 
-console.log(`Running showCollection`);
+//Testing showCollection
+console.log(`*****  Testing showCollection  *****`)
+
 console.log(`${showCollection(collection)}`);
 
-function findByArtist( artistSearch ) {
+function findByArtist( artist ) {
     let results = [];
     for( let i = 0; i < collection.length; i++) {
-        if ( collection[i].artist === artistSearch ) {
+        if ( collection[i].artist === artist ) {
             //console.log('Artist Found')
             //console.log(collection[i]);
             results.push(collection[i]);
@@ -45,4 +47,15 @@ function findByArtist( artistSearch ) {
     }
     return results;
 }//end findByArtist
+
+//Testing findByArtist
+console.log(`*****  Testing findByArtist  *****`)
+console.log(`Seaching for Rise Against, should return two albums`);
+console.log( findByArtist('Rise Against') );
+console.log(`Seaching for Eminem, should return empty array`);
+console.log( findByArtist('Eminem') );
+console.log(`Seaching for Flobots, should return one album`);
+console.log( findByArtist('Flobots') );
+
+//end test of findByArtist
 
