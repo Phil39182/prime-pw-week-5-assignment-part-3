@@ -56,6 +56,7 @@ console.log(`${showCollection(collection)}`);
 function findByArtist( artist ) {
     let findbyArtistresults = [];
     for( let i = 0; i < collection.length; i++) {
+        //pushes album object to array if matched criteria
         if ( collection[i].artist === artist ) {
             findbyArtistresults.push(collection[i]);
         }
@@ -74,9 +75,17 @@ console.log( findByArtist('Flobots') );
 
 //end test of findByArtist
 
-function search ( criteria ) {
-    let searchResults = [];
-    for( let i = 0; i < collection.length; i++) {
 
+function search ( artist,year ) {
+    if (artist || year){
+        //filters collection array by artist and year based on search parameters
+        let searchResults = collection.filter((album) => {
+        return album.artist === artist && album.year === year
+    })
+    return searchResults;
+}
+    else {
+        //returns entire collection if no search parameters entered
+        return showCollection(collection);
     }
-}//end search function
+}
