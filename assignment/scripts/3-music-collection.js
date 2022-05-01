@@ -3,11 +3,13 @@ console.log('***** Music Collection *****')
 let collection = [];
 
 function addToCollection (
+    //input parameters
     title,artist,yearPublished,
     song0,song0Duration,
     song1,song1Duration,
     song2,song2Duration) {
     const album = {
+        //input parameters entered into object 'album'
         title: title,
         artist: artist,
         year: yearPublished,
@@ -16,6 +18,7 @@ function addToCollection (
             song1, song1Duration,
             song2, song2Duration ]
     }
+    //push album object into collection array
     collection.push(album);
     return album;
 }//end addToCollection
@@ -89,3 +92,7 @@ function search ( artist,year ) {
         return showCollection(collection);
     }
 }
+
+console.log(`*****  Testing search  *****`)
+console.log(`search for Tenacious D, 2006 should return The Pick of Destiny album info`)
+console.log(search('Tenacious D','2006'));
